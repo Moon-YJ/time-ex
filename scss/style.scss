@@ -153,6 +153,42 @@ body {
 	}
 }
 
+// Theme style
+// morning
+main.morning {
+	background-image: url(../img/bg_morning.jpg);
+	figure {
+		background-image: url(../img/phone_morning.png);
+	}
+}
+// afternoon
+main.afternoon {
+	background-image: url(../img/bg_afternoon.jpg);
+	figure {
+		background-image: url(../img/phone_afternoon.png);
+		.screen {
+			color: #555;
+		}
+	}
+}
+// evening
+main.evening {
+	background-image: url(../img/bg_evening.jpg);
+	figure {
+		background-image: url(../img/phone_evening.png);
+	}
+}
+// night
+main.night {
+	background-image: url(../img/bg_night.jpg);
+	nav {
+		color: #fff;
+	}
+	figure {
+		background-image: url(../img/phone_night.png);
+	}
+}
+
 // 1600px 이하
 @media screen and (max-width: 1600px) {
 	body {
