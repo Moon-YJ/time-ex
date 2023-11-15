@@ -1,27 +1,22 @@
 const main = document.querySelector('main');
-const [spanHr, spanMin, spanSec] = main.querySelectorAll('.screen span');
-const em = main.querySelectorAll('.screen em');
-let timer;
+const numbers = main.querySelectorAll('.screen span');
+const em = main.querySelector('.screen .apm');
 
-/*
-  em.forEach((el, i) => {
-    el.classList.remove('on');
-  });
+setInterval(() => {
+	em.innerText = new Date().getHours() < 12 ? 'am' : 'pm';
+	getTime().forEach((num, idx) => setTime(num, idx));
+}, 1000);
 
-  if (spanHr >= 12 && spanHr < 0) {
-    em[1].classList.add('on');
-  } else {
-    em[0].classList.add('on');
-  }
-*/
-
-timer = setInterval(() => {
+// 시간값을 구해서 반환하는 함수
+function getTime() {
 	const now = new Date();
 	const hr = now.getHours();
 	const min = now.getMinutes();
 	const sec = now.getSeconds();
+	return [hr, min, sec];
+}
 
-	spanHr.innerText = hr < 10 ? '0' + hr : hr;
-	spanMin.innerText = min < 10 ? '0' + min : min;
-	spanSec.innerText = sec < 10 ? '0' + sec : sec;
-}, 1000);
+// 반환된 시간값을 인수로 받아서 DOM에 세팅하는 함수
+function setTime(num, index) {
+	numbers[index].innerText = num < 10 ? '0' + num : num;
+}
