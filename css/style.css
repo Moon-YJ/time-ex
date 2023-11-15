@@ -127,4 +127,46 @@ body main figure .screen em.on {
   opacity: 0.8;
 }
 
+@media screen and (max-width: 1600px) {
+  body main figure {
+    right: -15vw;
+    transform-origin: right center;
+    transform: scale(0.8);
+  }
+}
+@media screen and (max-width: 1400px) {
+  body main article {
+    top: 60vh;
+    width: 38vw;
+  }
+  body main figure {
+    transform: scale(0.75);
+  }
+}
+@media screen and (max-width: 1200px) {
+  body main nav {
+    width: 100%;
+    padding: 5vh 10vw;
+  }
+  body main article {
+    width: 100%;
+    top: 10vh;
+    left: 0;
+    padding: 10vw;
+  }
+  body main figure {
+    transform: scale(0.7);
+  }
+}
+@media screen and (max-width: 800px) {
+  body main article {
+    width: 100%;
+    top: 18vh;
+  }
+  body main figure {
+    transform: scale(0.6);
+    right: -20vw;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

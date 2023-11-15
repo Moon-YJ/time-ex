@@ -105,3 +105,65 @@ body {
 		}
 	}
 }
+
+// 1600px 이하
+@media screen and (max-width: 1600px) {
+	body {
+		main {
+			figure {
+				right: -15vw;
+				transform-origin: right center;
+				transform: scale(0.8);
+			}
+		}
+	}
+}
+// 1400px 이하
+@media screen and (max-width: 1400px) {
+	body {
+		main {
+			article {
+				top: 60vh;
+				width: 38vw;
+			}
+			figure {
+				transform: scale(0.75);
+			}
+		}
+	}
+}
+// 1200px 이하
+@media screen and (max-width: 1200px) {
+	body {
+		main {
+			nav {
+				width: 100%;
+				padding: 5vh 10vw;
+			}
+			article {
+				width: 100%;
+				top: 10vh;
+				left: 0;
+				padding: 10vw;
+			}
+			figure {
+				transform: scale(0.7);
+			}
+		}
+	}
+}
+// 800px 이하
+@media screen and (max-width: 800px) {
+	body {
+		main {
+			article {
+				width: 100%;
+				top: 18vh;
+			}
+			figure {
+				transform: scale(0.6);
+				right: -20vw;
+			}
+		}
+	}
+}
