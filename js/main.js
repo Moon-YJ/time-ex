@@ -4,15 +4,20 @@ const em = main.querySelector('.screen .apm');
 
 setInterval(() => {
 	em.innerText = new Date().getHours() < 12 ? 'am' : 'pm';
+	//getTime함수가 [시간,분,초]반환
+	//반환된 배열값을 그대로 반복돌면서 setTime함수에 인수로 전달
+	//setTime반복돌면서 시간,분,초에 1자리수일때 앞에 '0'을 붙여주는 공통로직 반복 처리
 	getTime().forEach((num, idx) => setTime(num, idx));
 }, 1000);
 
 // 시간값을 구해서 반환하는 함수
 function getTime() {
 	const now = new Date();
-	const hr = now.getHours();
+	let hr = now.getHours();
 	const min = now.getMinutes();
 	const sec = now.getSeconds();
+	//현재 시간값이 13이상이되면 12를 뺀값을 hr로 리턴
+	hr = hr > 12 ? hr - 12 : hr;
 	return [hr, min, sec];
 }
 

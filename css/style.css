@@ -170,6 +170,9 @@ body main figure .screen em {
   font-size: 1.6rem;
   opacity: 0.8;
 }
+body main figure .screen span {
+  width: 90px;
+}
 
 @media screen and (max-width: 1600px) {
   body main figure {
