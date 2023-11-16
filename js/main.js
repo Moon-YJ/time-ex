@@ -1,6 +1,8 @@
 const main = document.querySelector('main');
 const numbers = main.querySelectorAll('.screen span');
 const em = main.querySelector('.screen .apm');
+const btns = main.querySelectorAll('nav span');
+let timer;
 
 // 자주 바뀔만한 값을 전역변수로 객체를 배열로 묶어두는 형태로 따로 빼서 관리
 // 해당 값이 아래 함수에서 호출되도록 처리
@@ -12,7 +14,7 @@ const data = [
 	{ cond: new Date().getHours() >= 20 || new Date().getHours() < 5, name: 'night' },
 ];
 
-setInterval(() => {
+timer = setInterval(() => {
 	// data전역변수를 인수로 받아서 호출
 	changeTheme(data);
 	em.innerText = new Date().getHours() < 12 ? 'am' : 'pm';
@@ -63,3 +65,15 @@ function changeTheme(info) {
     }
   */
 }
+
+btns.forEach((btn, idx) => {
+	btn.addEventListener('click', (e) => {
+		btns.forEach((btn) => btn.classList.remove('on'));
+		e.currentTarget.classList.add('on');
+		clearInterval(timer);
+		main.className = '';
+		main.classList.add(e.currentTarget.innerText.toLowerCase());
+		// toLowerCase() - 모든 문자를 소문자로 반환
+		// toUpperCase() - 모든 문자를 대문자로 반환
+	});
+});
